@@ -14,4 +14,7 @@ class ExampleTest {
     Assertions.assertThat(resultValue).isEqualTo(10);
     Assertions.assertThat(result).isEqualTo(10);
   }
+
+
+
 }
