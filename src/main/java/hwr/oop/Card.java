@@ -1,13 +1,20 @@
 package hwr.oop;
 
 public class Card {
-    private int name; //Wird der Stich-wert
-    private int value;  //Wert der Karte für den Zähler
+    private String name;
+    private int countValue;  //Wert der Karte für den Zähler
+    private int battleValue; // Stichwert
+    private boolean trump = false;
+    private String color;
 
-    public Card(int pName, int pValue)//Construktor
+    public Card(String pName, int pCountValue, int pBattleValue, String pColor)//Konstruktor
     {
         this.name = pName;
-        this.value = pValue;
+        this.countValue = pCountValue;
+        this.battleValue = pBattleValue;
+        this.color = pColor;
+
+
     }
 
     public int getValue()
