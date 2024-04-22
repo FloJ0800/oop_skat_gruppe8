@@ -39,12 +39,18 @@ public class CardDeck {
         deck.add(new Card("Ass", 11, 7,"Kreuz"));
     }
 
+    public Card getCard()
+    {
+
+        return new Card("PIk",1,1,"Red");
+    }
+
     public boolean isEmpty()  {
         if(deck.isEmpty()){
-            return false;
+            return true;
         }
         else {
-            return true;
+            return false;
         }
     }
 }
