@@ -1,7 +1,6 @@
 package hwr.oop;
 
-class mainOP
-{
+class mainOP {
     public static void main(String[] args) {
     }
 }

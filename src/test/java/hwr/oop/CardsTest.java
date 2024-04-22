@@ -6,9 +6,8 @@ import org.junit.jupiter.api.Test;
 public class CardsTest {
 
     @Test
-    void testConstructorNumber()
-    {
-        Card card = new Card("10",10, 6,"Karo");
+    void testConstructorNumber() {
+        Card card = new Card("10", 10, 6, "Karo");
         String resultName = card.getName();
         int resultCountValue = card.getCountValue();
         int resultBattleValue = card.getBattleValue();

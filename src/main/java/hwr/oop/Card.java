@@ -14,15 +14,19 @@ public class Card {
         this.battleValue = pBattleValue;
         this.color = pColor;
     }
+
     public int getBattleValue() {
         return battleValue;
     }
+
     public int getCountValue() {
         return countValue;
     }
+
     public String getName() {
         return name;
     }
+
     public String getColor() {
         return color;
     }
