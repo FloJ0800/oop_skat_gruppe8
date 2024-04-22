@@ -1,6 +1,5 @@
 package hwr.oop;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CardDeck {
     private List<Card> deck = new ArrayList<Card>();
@@ -38,10 +37,15 @@ public class CardDeck {
         deck.add(new Card("Dame", 3, 4,"Kreuz"));
         deck.add(new Card("König", 4, 5,"Kreuz"));
         deck.add(new Card("Ass", 11, 7,"Kreuz"));
+    }
 
-
-
-
+    public boolean isEmpty()  {
+        if(deck.isEmpty()){
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }
 

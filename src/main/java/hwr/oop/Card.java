@@ -17,13 +17,19 @@ public class Card {
 
     }
 
-    public int getValue()
-    {
-        return value;
+    public int getBattleValue() {
+        return battleValue;
     }
 
-    public int getName()
-    {
+    public int getCountValue() {
+        return countValue;
+    }
+
+    public String getName() {
         return name;
+    }
+
+    public String getColor() {
+        return color;
     }
 }
