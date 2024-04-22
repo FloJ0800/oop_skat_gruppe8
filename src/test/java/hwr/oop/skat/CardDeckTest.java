@@ -1,14 +1,15 @@
-package hwr.oop;
+package hwr.oop.skat;
 
 import org.junit.jupiter.api.Test;
-import org.assertj.core.api.Assertions;
 
-public class CardDeckTest {
+import static org.assertj.core.api.Assertions.assertThat;
+
+class CardDeckTest {
     @Test
     void CardDeck_IsNotEmpty() {
         CardDeck cardDeck = new CardDeck();
         cardDeck.fillList();
-        Assertions.assertThat(cardDeck.isEmpty()).isFalse();
+        assertThat(cardDeck.isEmpty()).isFalse();
     }
 
     @Test

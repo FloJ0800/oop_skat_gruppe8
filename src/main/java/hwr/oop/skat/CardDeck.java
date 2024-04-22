@@ -1,6 +1,7 @@
-package hwr.oop;
+package hwr.oop.skat;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CardDeck {
     private List<Card> deck = new ArrayList<Card>();

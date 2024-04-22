@@ -1,4 +1,4 @@
-package hwr.oop;
+package hwr.oop.skat;
 
 public class Card {
     private String name;  // Name der Karte
