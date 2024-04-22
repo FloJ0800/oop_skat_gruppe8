@@ -45,13 +45,8 @@ public class CardDeck {
         return new Card("PIk",1,1,"Red");
     }
 
-    public boolean isEmpty()  {
-        if(deck.isEmpty()){
-            return true;
-        }
-        else {
-            return false;
-        }
+    public boolean isEmpty() {
+        return deck.isEmpty();
     }
 }
 
