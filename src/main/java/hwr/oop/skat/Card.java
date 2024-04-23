@@ -1,18 +1,22 @@
 package hwr.oop.skat;
 
 public class Card {
-    private String name;  // Name der Karte
+    private Symbol symbol;  // Name der Karte
     private int countValue;  // Wert der Karte fürs Auszählen
     private int battleValue; // Stichwert der Karte
     private boolean trump = false;  // Trumpf oder nicht
-    private String color;  // Farbe der Karte
+    private Color color;  // Farbe der Karte
 
-    public Card(String pName, int pCountValue, int pBattleValue, String pColor)//Konstruktor
+    public Card(Symbol pSymbol, Color pColor)//Konstruktor
     {
-        this.name = pName;
-        this.countValue = pCountValue;
-        this.battleValue = pBattleValue;
+        this.symbol = pSymbol;
+        this.countValue = symbol.getCountValue();
+        this.battleValue = symbol.ordinal();
         this.color = pColor;
+    }
+
+    public void printCard(){
+        System.out.println(color + " " + symbol);
     }
 
     public int getBattleValue() {
@@ -23,11 +27,12 @@ public class Card {
         return countValue;
     }
 
-    public String getName() {
-        return name;
+    public Symbol getSymbol() {
+        return symbol;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
+
 }

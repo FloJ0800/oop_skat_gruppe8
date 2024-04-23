@@ -11,17 +11,17 @@ public class CardsTest {
 
     @Test
     void testConstructorNumber() {
-        Card card = new Card("10", 10, 6, "Karo");
-        String resultName = card.getName();
+        Card card = new Card(Symbol.ZEHN, Color.KARO);
+        Symbol resultSymbol = card.getSymbol();
         int resultCountValue = card.getCountValue();
         int resultBattleValue = card.getBattleValue();
-        String resultColor = card.getColor();
+        Color resultColor = card.getColor();
 
         assertSoftly(softly->{
-            softly.assertThat(resultName).isEqualTo("10");
+            softly.assertThat(resultSymbol).isEqualTo(Symbol.ZEHN);
             softly.assertThat(resultCountValue).isEqualTo(10);
             softly.assertThat(resultBattleValue).isEqualTo(6);
-            softly.assertThat(resultColor).isEqualTo("Karo");
+            softly.assertThat(resultColor).isEqualTo(Color.KARO);
         });
     }
 
