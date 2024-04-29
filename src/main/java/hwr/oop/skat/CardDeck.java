@@ -30,7 +30,7 @@ public class CardDeck {
         return deck;
     }
 
-    public void shuffel() {
+    public void shuffle() {
     }
 }
 

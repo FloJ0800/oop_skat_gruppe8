@@ -15,10 +15,10 @@ class CardDeckTest {
     }
 
     @Test
-    void cardDeckShuffelTest() {
+    void cardDeckShuffleTest() {
         CardDeck cardDeck = new CardDeck();
         List<Card> checkList = cardDeck.getDeck();
-        cardDeck.shuffel();
+        cardDeck.shuffle();
         assertThat(cardDeck.getDeck()).isNotEqualTo(checkList);
 
     }
