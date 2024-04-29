@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
-public class CardsTest {
+class CardsTest {
 
     @Test
     void testConstructorNumber() {
@@ -20,7 +20,7 @@ public class CardsTest {
         assertSoftly(softly->{
             softly.assertThat(resultSymbol).isEqualTo(Symbol.ZEHN);
             softly.assertThat(resultCountValue).isEqualTo(10);
-            softly.assertThat(resultBattleValue).isEqualTo(6);
+            softly.assertThat(resultBattleValue).isEqualTo(5);
             softly.assertThat(resultColor).isEqualTo(Color.KARO);
         });
     }

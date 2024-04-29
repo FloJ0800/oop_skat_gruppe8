@@ -13,7 +13,7 @@ class CardDeckTest {
     }
 
     @Test
-    void ckeckCardDeck() {
+    void checkCardDeck() {
         CardDeck cardDeck = new CardDeck();
         cardDeck.fillList();
     }
