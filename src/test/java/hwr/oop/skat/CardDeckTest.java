@@ -2,6 +2,8 @@ package hwr.oop.skat;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class CardDeckTest {
@@ -13,9 +15,11 @@ class CardDeckTest {
     }
 
     @Test
-    void checkCardDeck() {
+    void cardDeckShuffelTest() {
         CardDeck cardDeck = new CardDeck();
-        cardDeck.fillList();
+        List<Card> checkList = cardDeck.getDeck();
+        cardDeck.shuffel();
+        assertThat(cardDeck.getDeck()).isNotEqualTo(checkList);
 
     }
 }

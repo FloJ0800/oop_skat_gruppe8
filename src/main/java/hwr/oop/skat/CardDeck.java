@@ -25,5 +25,12 @@ public class CardDeck {
     public boolean isEmpty() {
         return deck.isEmpty();
     }
+
+    public List<Card> getDeck() {
+        return deck;
+    }
+
+    public void shuffel() {
+    }
 }
 
