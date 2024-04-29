@@ -25,5 +25,13 @@ class CardsTest {
         });
     }
 
+    @Test
+    void testPrintCard()
+    {
+        Card card = new Card(Symbol.ZEHN, Color.KARO);
+        String compareString = Color.KARO.toString() + " " + Symbol.ZEHN.toString();
+        assertThat(card.printCard()).isEqualTo(compareString);
+    }
+
 
 }

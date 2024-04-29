@@ -15,8 +15,8 @@ public class Card {
         this.color = pColor;
     }
 
-    public void printCard(){
-        System.out.println(color + " " + symbol);
+    public String printCard(){
+        return color + " " + symbol;
     }
 
     public int getBattleValue() {

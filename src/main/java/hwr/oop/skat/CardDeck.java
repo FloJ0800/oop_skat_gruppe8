@@ -16,11 +16,11 @@ public class CardDeck {
         }
     }
 
-    public void printCards(){
-        for(Card i : deck){
-            i.printCard();
-        }
-    }
+    //public void printCards(){
+        //for(Card i : deck){
+           // i.printCard();
+        //}
+    //}
 
     public boolean isEmpty() {
         return deck.isEmpty();
