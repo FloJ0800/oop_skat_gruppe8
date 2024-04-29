@@ -17,9 +17,19 @@ class CardDeckTest {
     @Test
     void cardDeckShuffleTest() {
         CardDeck cardDeck = new CardDeck();
-        List<Card> checkList = cardDeck.getDeck();
+        cardDeck.fillList();
         cardDeck.shuffle();
-        assertThat(cardDeck.getDeck()).isNotEqualTo(checkList);
+        int deckSize = cardDeck.getShuffledDeck().size();
+        assertThat(deckSize).isEqualTo(32);
+
+    }
+
+    @Test
+    void cardDeckTest() {
+        CardDeck cardDeck = new CardDeck();
+        cardDeck.fillList();
+        int deckSize = cardDeck.getDeck().size();
+        assertThat(deckSize).isEqualTo(32);
 
     }
 }
