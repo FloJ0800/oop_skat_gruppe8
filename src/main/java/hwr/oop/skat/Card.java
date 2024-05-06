@@ -15,7 +15,7 @@ public class Card {
         this.color = pColor;
     }
 
-    public String printCard(){
+    public String printCard() {
         return color + " " + symbol;
     }
 

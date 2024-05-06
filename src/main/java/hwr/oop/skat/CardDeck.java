@@ -1,8 +1,8 @@
 package hwr.oop.skat;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
 public class CardDeck {
     private List<Card> deck = new ArrayList<Card>();
@@ -11,15 +11,15 @@ public class CardDeck {
     private List<Symbol> deckSymbol = Symbol.allSymbols();
 
     public void fillList() {
-        for(Color i : deckColor){
-            for(Symbol j : deckSymbol){
+        for (Color i : deckColor) {
+            for (Symbol j : deckSymbol) {
                 deck.add(new Card(j, i));
             }
         }
     }
 
-    public void printCards(){
-        for(Card i : deck){
+    public void printCards() {
+        for (Card i : deck) {
             System.out.println(i.printCard());
         }
     }
@@ -39,6 +39,17 @@ public class CardDeck {
 
     public List<Card> getShuffledDeck() {
         return shuffledDeck;
+    }
+
+    public Card drawFirstCard(){
+        if(shuffledDeck.isEmpty()) {
+            throw new RuntimeException("Karten alle!");
+        }
+        else{
+            Card drawCard = shuffledDeck.getFirst();
+            shuffledDeck.removeFirst();
+            return drawCard;
+        }
     }
 }
 

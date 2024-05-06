@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -cp target/oop_skat_gruppe8-0.1.0.jar hwr.oop.Example
+java -cp target/oop_skat_gruppe8-0.1.0.jar hwr.oop.skat.cli.Main "$@"

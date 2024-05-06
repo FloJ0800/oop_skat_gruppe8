@@ -1,13 +1,22 @@
 package hwr.oop.skat;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
     private String name;
     private boolean alone;
     private int points = 0;
 
+    private final List<Card> handCards = new ArrayList<>();
+
     public Player(String pName, boolean pAlone) {
         name = pName;
         alone = pAlone;
+    }
+
+    public void drawCard(Card pAddCard){
+        handCards.add(pAddCard);
     }
 }
 

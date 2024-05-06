@@ -15,7 +15,7 @@ class CardsTest {
         int resultBattleValue = card.getBattleValue();
         Color resultColor = card.getColor();
 
-        assertSoftly(softly->{
+        assertSoftly(softly -> {
             softly.assertThat(resultSymbol).isEqualTo(Symbol.ZEHN);
             softly.assertThat(resultCountValue).isEqualTo(10);
             softly.assertThat(resultBattleValue).isEqualTo(5);
@@ -24,8 +24,7 @@ class CardsTest {
     }
 
     @Test
-    void testPrintCard()
-    {
+    void testPrintCard() {
         Card card = new Card(Symbol.ZEHN, Color.KARO);
         String compareString = Color.KARO.toString() + " " + Symbol.ZEHN.toString();
         assertThat(card.printCard()).isEqualTo(compareString);

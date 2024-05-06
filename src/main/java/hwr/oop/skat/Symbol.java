@@ -12,12 +12,12 @@ public enum Symbol {
         this.countValue = pCountValue;
     }
 
-    public int getCountValue(){
-        return countValue;
-    }
-
     public static List<Symbol> allSymbols() {
         return Arrays.asList(Symbol.values());
+    }
+
+    public int getCountValue() {
+        return countValue;
     }
 
 }
