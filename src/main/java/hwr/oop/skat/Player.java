@@ -18,6 +18,22 @@ public class Player {
     public void drawCard(Card pAddCard){
         handCards.add(pAddCard);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean isAlone() {
+        return alone;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public List<Card> getHandCards() {
+        return handCards;
+    }
 }
 
 

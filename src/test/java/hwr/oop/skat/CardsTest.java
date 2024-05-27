@@ -13,6 +13,7 @@ class CardsTest {
         Symbol resultSymbol = card.getSymbol();
         int resultCountValue = card.getCountValue();
         int resultBattleValue = card.getBattleValue();
+        boolean resultTrump = card.isTrump();
         Color resultColor = card.getColor();
 
         assertSoftly(softly -> {
@@ -20,6 +21,7 @@ class CardsTest {
             softly.assertThat(resultCountValue).isEqualTo(10);
             softly.assertThat(resultBattleValue).isEqualTo(5);
             softly.assertThat(resultColor).isEqualTo(Color.KARO);
+            softly.assertThat(resultTrump).isEqualTo(false);
         });
     }
 
@@ -29,6 +31,5 @@ class CardsTest {
         String compareString = Color.KARO.toString() + " " + Symbol.ZEHN.toString();
         assertThat(card.printCard()).isEqualTo(compareString);
     }
-
 
 }

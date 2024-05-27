@@ -15,6 +15,17 @@ public class Card {
         this.color = pColor;
     }
 
+    @Override
+    public String toString() {
+        return "Card{" +
+                "symbol=" + symbol +
+                ", countValue=" + countValue +
+                ", battleValue=" + battleValue +
+                ", trump=" + trump +
+                ", color=" + color +
+                '}';
+    }
+
     public String printCard() {
         return color + " " + symbol;
     }
@@ -33,6 +44,10 @@ public class Card {
 
     public Color getColor() {
         return color;
+    }
+    public boolean isTrump()
+    {
+        return trump;
     }
 
 }

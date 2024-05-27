@@ -18,10 +18,14 @@ public class CardDeck {
         }
     }
 
-    public void printCards() {
-        for (Card i : deck) {
-            System.out.println(i.printCard());
-        }
+    @Override
+    public String toString() {
+        return "CardDeck{" +
+                "deck=" + deck +
+                ", shuffledDeck=" + shuffledDeck +
+                ", deckColor=" + deckColor +
+                ", deckSymbol=" + deckSymbol +
+                '}';
     }
 
     public void shuffle() {
@@ -41,15 +45,27 @@ public class CardDeck {
         return shuffledDeck;
     }
 
+    public List<Color> getDeckColor() {
+        return deckColor;
+    }
+
+    public List<Symbol> getDeckSymbol() {
+        return deckSymbol;
+    }
+
     public Card drawFirstCard(){
-        if(shuffledDeck.isEmpty()) {
-            throw new RuntimeException("Karten alle!");
-        }
-        else{
+        try
+        {
             Card drawCard = shuffledDeck.getFirst();
             shuffledDeck.removeFirst();
             return drawCard;
         }
+        catch(Exception e)
+        {
+            System.out.println("Karten alle!");
+            return null;
+        }
+
     }
 }
 
