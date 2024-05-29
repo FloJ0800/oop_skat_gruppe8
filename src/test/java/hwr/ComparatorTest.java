@@ -25,11 +25,22 @@ class ComparatorTest {
         int noTrumpAndTrump = testComparator.getHighestTrick(noTrumpCardOne, trumpCardOne);
         int trumpAndNoTrump = testComparator.getHighestTrick(trumpCardOne, noTrumpCardTwo);
 
+        int trumpAndTrumpReverse = testComparator.getHighestTrick(trumpCardTwo, trumpCardOne);
+        int noTrumpAndNoTrumpReverse = testComparator.getHighestTrick(noTrumpCardTwo, noTrumpCardOne);
+        int noTrumpAndTrumpReverse = testComparator.getHighestTrick(trumpCardOne, noTrumpCardOne);
+        int trumpAndNoTrumpReverse = testComparator.getHighestTrick(noTrumpCardOne, trumpCardTwo);
+
+
         assertSoftly(softly -> {
             softly.assertThat(trumpAndTrump).isEqualTo(-1);
             softly.assertThat(noTrumpAndNoTrump).isEqualTo(-1);
             softly.assertThat(noTrumpAndTrump).isEqualTo(-1);
             softly.assertThat(trumpAndNoTrump).isEqualTo(1);
+
+            softly.assertThat(trumpAndTrumpReverse).isEqualTo(1);
+            softly.assertThat(noTrumpAndNoTrumpReverse).isEqualTo(1);
+            softly.assertThat(noTrumpAndTrumpReverse).isEqualTo(1);
+            softly.assertThat(trumpAndNoTrumpReverse).isEqualTo(-1);
 
         });
     }
