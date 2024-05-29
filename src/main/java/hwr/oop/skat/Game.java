@@ -7,13 +7,12 @@ public class Game {
     private List<Player> playerList = new ArrayList<>();
     private List<Card> skat = new ArrayList<>();
     private CardDeck deck = new CardDeck();
+    private Player playersTurn;
+    private int playersMove = 0;
 
-    public Game()
+    public Game(ArrayList<Player> pPlayers)
     {
-        playerList.add(new Player("Katja", true));
-        playerList.add(new Player("Florian", false));
-        playerList.add(new Player("Moritz", false));
-
+        playerList.addAll(pPlayers);
         deck.fillList();
         deck.shuffle();
     }
@@ -27,6 +26,21 @@ public class Game {
         }
         this.skat.add(deck.drawFirstCard());
         this.skat.add(deck.drawFirstCard());
+
+        playersTurn = playerList.get(playersMove);
+    }
+
+    public Player getPlayersTurn() {
+        return playersTurn;
+    }
+
+    public void nextPlayer()
+    {
+        playersMove++;
+        if(playersMove == playerList.size()){
+            playersMove = 0;
+        }
+        playersTurn = playerList.get(playersMove);
     }
 
     public List<Player> getPlayerList() {

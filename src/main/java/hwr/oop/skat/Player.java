@@ -2,6 +2,7 @@ package hwr.oop.skat;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Player {
     private String name;
@@ -13,6 +14,16 @@ public class Player {
     public Player(String pName, boolean pAlone) {
         name = pName;
         alone = pAlone;
+    }
+
+    public Stream<String> getHand()
+    {
+        List<String> hand = new ArrayList<>();
+        for(Card card : handCards)
+        {
+            hand.add(card.printCard());
+        }
+        return hand.stream();
     }
 
     public void drawCard(Card pAddCard){
