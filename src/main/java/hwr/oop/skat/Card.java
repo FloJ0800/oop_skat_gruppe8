@@ -49,5 +49,9 @@ public class Card {
     {
         return trump;
     }
+    public void setTrump(boolean trumpState)
+    {
+        trump = trumpState;
+    }
 
 }
