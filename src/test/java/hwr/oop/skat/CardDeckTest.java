@@ -1,6 +1,5 @@
 package hwr.oop.skat;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -42,7 +41,7 @@ class CardDeckTest {
         cardDeck.shuffle();
         Card testFirstCard = cardDeck.getShuffledDeck().getFirst();
         Card firstCard = cardDeck.drawFirstCard();
-        assertThat(cardDeck.getShuffledDeck().size()).isEqualTo(31);
+        assertThat(cardDeck.getShuffledDeck()).hasSize(31);
         assertThat(firstCard).isEqualTo(testFirstCard);
     }
 

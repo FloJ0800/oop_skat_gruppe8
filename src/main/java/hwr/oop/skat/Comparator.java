@@ -1,10 +1,9 @@
 package hwr.oop.skat;
-import hwr.oop.skat.Card;
 
 public class Comparator {
     
 
-    public static int getHighestTrick(Card CardA, Card CardB){
+    public int getHighestTrick(Card CardA, Card CardB){
 
         if (CardA.isTrump() && CardB.isTrump()){
 

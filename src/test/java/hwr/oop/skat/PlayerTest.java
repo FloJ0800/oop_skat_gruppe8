@@ -1,14 +1,10 @@
 package hwr.oop.skat;
-
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PlayerTest {
 
@@ -33,7 +29,7 @@ class PlayerTest {
         Player player1 = new Player("Juergen", true);
         int testHandSize = player1.getHandCards().size();
         player1.drawCard(deck.drawFirstCard());
-        assertThat(player1.getHandCards().size()).isEqualTo(testHandSize+1);
+        assertThat(player1.getHandCards()).hasSize(testHandSize+1);
     }
 
 }
