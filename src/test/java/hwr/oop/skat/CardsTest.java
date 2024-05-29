@@ -1,5 +1,6 @@
 package hwr.oop.skat;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,6 +31,14 @@ class CardsTest {
         Card card = new Card(Symbol.ZEHN, Color.KARO);
         String compareString = Color.KARO.toString() + " " + Symbol.ZEHN.toString();
         assertThat(card.printCard()).isEqualTo(compareString);
+    }
+
+    @Test
+    void testSetTrump()
+    {
+        Card card = new Card(Symbol.ZEHN, Color.KARO);
+        card.setTrump(true);
+        assertThat(card.isTrump()).isEqualTo(true);
     }
 
 }
