@@ -8,7 +8,7 @@ public class UserInterface {
 
     private ArrayList<Player> players = new ArrayList<>();
     private Game game;
-
+    private int playedTurns = 0;
     private Scanner s = new Scanner(System.in);
 
     public void menu()
@@ -48,12 +48,18 @@ public class UserInterface {
 
     public void turn()
     {
+        playedTurns++;
+        if (playedTurns == 3){
+            playedTurns = 0;
+            startCompare();
+        }
         System.out.println(game.getPlayersTurn().getName() + ", bist du bereit? Schreib einfach 'y' ");
         if(s.nextLine().equals("y"))
         {
             Stream<String> playerHandCards = game.getPlayersTurn().getHand();
             playerHandCards.forEach(System.out::println);
             game.nextPlayer();
+
         }
         else
         {
@@ -63,4 +69,7 @@ public class UserInterface {
         turn();
     }
 
+    private void startCompare() {
+
+    }
 }
