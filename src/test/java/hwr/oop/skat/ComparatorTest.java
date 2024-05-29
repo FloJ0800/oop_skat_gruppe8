@@ -1,8 +1,4 @@
-package hwr;
-import hwr.oop.skat.Comparator;
-import hwr.oop.skat.Symbol;
-import hwr.oop.skat.Card;
-import hwr.oop.skat.Color;
+package hwr.oop.skat;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
