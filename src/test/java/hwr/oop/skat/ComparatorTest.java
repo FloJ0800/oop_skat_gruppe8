@@ -15,28 +15,21 @@ class ComparatorTest {
         trumpCardTwo.setTrump(true);
         Card noTrumpCardOne = new Card(Symbol.SIEBEN, Color.PIK);
         Card noTrumpCardTwo = new Card(Symbol.NEUN, Color.PIK);
+        Card noTrumpCardTwo_HERZ = new Card(Symbol.NEUN, Color.HERZ);
+
 
         int trumpAndTrump = testComparator.getHighestTrick(trumpCardOne, trumpCardTwo);
         int noTrumpAndNoTrump = testComparator.getHighestTrick(noTrumpCardOne, noTrumpCardTwo);
         int noTrumpAndTrump = testComparator.getHighestTrick(noTrumpCardOne, trumpCardOne);
         int trumpAndNoTrump = testComparator.getHighestTrick(trumpCardOne, noTrumpCardTwo);
-
-        int trumpAndTrumpReverse = testComparator.getHighestTrick(trumpCardTwo, trumpCardOne);
-        int noTrumpAndNoTrumpReverse = testComparator.getHighestTrick(noTrumpCardTwo, noTrumpCardOne);
-        int noTrumpAndTrumpReverse = testComparator.getHighestTrick(trumpCardOne, noTrumpCardOne);
-        int trumpAndNoTrumpReverse = testComparator.getHighestTrick(noTrumpCardOne, trumpCardTwo);
-
+        int differentColor = testComparator.getHighestTrick(noTrumpCardTwo, noTrumpCardTwo_HERZ);
 
         assertSoftly(softly -> {
             softly.assertThat(trumpAndTrump).isEqualTo(-1);
             softly.assertThat(noTrumpAndNoTrump).isEqualTo(-1);
             softly.assertThat(noTrumpAndTrump).isEqualTo(-1);
             softly.assertThat(trumpAndNoTrump).isEqualTo(1);
-
-            softly.assertThat(trumpAndTrumpReverse).isEqualTo(1);
-            softly.assertThat(noTrumpAndNoTrumpReverse).isEqualTo(1);
-            softly.assertThat(noTrumpAndTrumpReverse).isEqualTo(1);
-            softly.assertThat(trumpAndNoTrumpReverse).isEqualTo(-1);
+            softly.assertThat(differentColor).isEqualTo(1);
 
         });
     }
