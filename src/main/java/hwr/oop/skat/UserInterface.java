@@ -34,7 +34,7 @@ public class UserInterface {
         players.add(new Player(s.nextLine(), false));
         System.out.println("Spieler 3 gebe deinen Namen ein:");
         players.add(new Player(s.nextLine(), false));
-        game = new Game(players);
+        game = new Game();
         play();
 
     }
@@ -58,7 +58,6 @@ public class UserInterface {
         {
             Stream<String> playerHandCards = game.getPlayersTurn().getHand();
             playerHandCards.forEach(System.out::println);
-            game.nextPlayer();
 
         }
         else

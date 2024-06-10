@@ -2,8 +2,8 @@ package hwr.oop.skat.cli;
 
 import hwr.oop.skat.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.PrintStream;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -11,8 +11,11 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("gnampf!");
         final var cli = new OutputOnlyCli(System.out);
-        UserInterface ui = new UserInterface();
-        ui.menu();
+        DataManager dataManager = new DataManager();
+        dataManager.save("Java ist nice und Try-Catch ist gut vor allem meine :D Save ");
+        Stream<String> dataStream = dataManager.load();
+        dataStream.forEach(System.out::println);
+
 
     }
 

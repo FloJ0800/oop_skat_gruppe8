@@ -10,15 +10,19 @@ public class Game {
     private Player playersTurn;
     private int playersMove = 0;
 
-    public Game(ArrayList<Player> pPlayers)
+    public Game()
     {
-        playerList.addAll(pPlayers);
-        deck.fillList();
-        deck.shuffle();
+        playerList.add(new Player("Player1",true));
+        playerList.add(new Player("Player2",false));
+        playerList.add(new Player("Player3",false));
+
     }
 
     public void giveCards() //Ersetzen durch einen Stream
     {
+        deck.fillList();
+        deck.shuffle();
+
         for(int i = 0; i <= 9; i++){
             for(Player p: playerList){
                 p.drawCard(deck.drawFirstCard());
@@ -30,17 +34,14 @@ public class Game {
         playersTurn = playerList.get(playersMove);
     }
 
-    public Player getPlayersTurn() {
-        return playersTurn;
+    public void layCard()
+    {
+        Tricks tricks = new Tricks();
+        DataManager dataManager = new DataManager();
     }
 
-    public void nextPlayer()
-    {
-        playersMove++;
-        if(playersMove == playerList.size()){
-            playersMove = 0;
-        }
-        playersTurn = playerList.get(playersMove);
+    public Player getPlayersTurn() {
+        return playersTurn;
     }
 
     public List<Player> getPlayerList() {
