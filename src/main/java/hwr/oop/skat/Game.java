@@ -2,20 +2,21 @@ package hwr.oop.skat;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class Game {
     private List<Player> playerList = new ArrayList<>();
     private List<Card> skat = new ArrayList<>();
     private CardDeck deck = new CardDeck();
-    private Player playersTurn;
-    private int playersMove = 0;
+    DataManager dataManager;
 
     public Game()
     {
-        playerList.add(new Player("Player1",true));
-        playerList.add(new Player("Player2",false));
-        playerList.add(new Player("Player3",false));
-
+        dataManager = new DataManager();
+        dataManager.save("Spieler1;Spieler2;Spieler3");
+        Stream<String> dataStream = dataManager.load();
+        dataStream.forEach(System.out::println);
     }
 
     public void giveCards() //Ersetzen durch einen Stream
@@ -31,7 +32,6 @@ public class Game {
         this.skat.add(deck.drawFirstCard());
         this.skat.add(deck.drawFirstCard());
 
-        playersTurn = playerList.get(playersMove);
     }
 
     public void layCard()
@@ -40,8 +40,10 @@ public class Game {
         DataManager dataManager = new DataManager();
     }
 
-    public Player getPlayersTurn() {
-        return playersTurn;
+    public void loadData()
+    {
+
+
     }
 
     public List<Player> getPlayerList() {

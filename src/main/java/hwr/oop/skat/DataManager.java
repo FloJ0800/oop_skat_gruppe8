@@ -40,7 +40,7 @@ public class DataManager {
         try {
             FileReader fileReader = new FileReader(file);
             String temStr = Files.readString(Path.of(path), Charset.defaultCharset());
-            stringStream = Stream.of(temStr);
+            stringStream = Stream.of(temStr.split(";"));
             fileReader.close();
 
         } catch (FileNotFoundException e) {
