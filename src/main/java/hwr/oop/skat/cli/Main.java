@@ -13,5 +13,7 @@ public class Main {
     @SuppressWarnings("java:S106")
     public static void main(String[] args) {
         final var cli = new OutputOnlyCli(System.out);
+        List<Integer> list = List.of(1, 2);
+        cli.handle(list);
     }
 }
