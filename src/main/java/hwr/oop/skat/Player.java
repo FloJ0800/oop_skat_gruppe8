@@ -15,6 +15,10 @@ public class Player {
         alone = pAlone;
     }
 
+    public void setPoints(int newPoints){
+        points = newPoints;
+    }
+
     public void drawCard(Card pAddCard){
         handCards.add(pAddCard);
     }

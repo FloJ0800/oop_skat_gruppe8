@@ -29,8 +29,9 @@ public class CardDeck {
     }
 
     public void shuffle() {
-        this.shuffledDeck = deck;
-        Collections.shuffle(shuffledDeck);
+        List<Card> copy = new ArrayList<>(deck);
+        Collections.shuffle(copy);
+        this.shuffledDeck = copy;
     }
 
     public boolean isEmpty() {
@@ -62,7 +63,6 @@ public class CardDeck {
         }
         catch(Exception e)
         {
-            System.out.println("Karten alle!");
             return null;
         }
 

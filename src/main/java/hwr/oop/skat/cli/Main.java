@@ -12,14 +12,6 @@ public class Main {
 
     @SuppressWarnings("java:S106")
     public static void main(String[] args) {
-        System.out.println("gnampf!");
         final var cli = new OutputOnlyCli(System.out);
-        Game game = new Game();
-        game.giveCards();
-
     }
-
 }
-
-
-
