@@ -15,6 +15,5 @@ public class Main {
         List<Integer> list = List.of(1, 2);
         cli.handle(list);
         Game game = new Game();
-        game.loadData();
     }
 }

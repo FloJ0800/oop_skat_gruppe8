@@ -54,10 +54,6 @@ public class Game {
 
     }
 
-    public void loadData()
-    {
-
-    }
 
     public List<Card> getLayedCards() {
         return layedCards;
