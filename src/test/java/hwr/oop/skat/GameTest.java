@@ -39,4 +39,10 @@ public class GameTest {
             assertThat(game.getSkat().size()).isEqualTo(2);
 
     }
+
+    @Test
+    public void layCardTest()
+    {
+
+    }
 }
