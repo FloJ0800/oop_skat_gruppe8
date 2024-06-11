@@ -12,6 +12,7 @@ public class Main {
         System.out.println("gnampf!");
         final var cli = new OutputOnlyCli(System.out);
         Game game = new Game();
+        game.loadData();
     }
 
 }

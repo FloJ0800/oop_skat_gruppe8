@@ -10,13 +10,23 @@ public class Game {
     private List<Card> skat = new ArrayList<>();
     private CardDeck deck = new CardDeck();
     DataManager dataManager;
+    Stream<Card> layedCards;
+    Stream<String> dataStream;
+    int currentPlayer; //?
 
     public Game()
     {
         dataManager = new DataManager();
-        dataManager.save("Spieler1;Spieler2;Spieler3");
-        Stream<String> dataStream = dataManager.load();
+        dataManager.save("Spieler1;Spieler2;Spieler3;Spieler1=solo;");
+        dataStream = dataManager.load();
         dataStream.forEach(System.out::println);
+    }
+
+    public void fillPlayerList(){
+        dataStream.filter(c -> c.equals("Spieler%"))
+            .forEach(System.out::println);
+        ;
+
     }
 
     public void giveCards() //Ersetzen durch einen Stream
@@ -34,9 +44,13 @@ public class Game {
 
     }
 
-    public void layCard()
+    public void layCard(Card pCard)
     {
-        Tricks tricks = new Tricks();
+        layedCards = Stream.concat(layedCards, Stream.of(pCard));
+        if(layedCards.count() == 3)
+        {
+            Tricks tricks = new Tricks(layedCards);
+        }
         DataManager dataManager = new DataManager();
     }
 
