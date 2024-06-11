@@ -18,9 +18,7 @@ public class DataManager {
     {
         try{
             File file = new File(path);
-            if(!file.exists()){
-                file.createNewFile();
-            }
+            file.createNewFile();
 
             FileWriter fileWriter = new FileWriter(path);
             fileWriter.write(pSaveData);

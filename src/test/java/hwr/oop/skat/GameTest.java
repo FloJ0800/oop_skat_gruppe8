@@ -43,6 +43,11 @@ public class GameTest {
     @Test
     public void layCardTest()
     {
-
+        Game game = new Game();
+        Card card = new Card(Symbol.ZEHN,Color.KARO);
+        int layedCardCount = game.layedCards.size();
+        game.layCard(card);
+        assertThat(game.getLayedCards().size()).isEqualTo(layedCardCount + 1);
+        assertThat(game.getLayedCards().getLast()).isEqualTo(card);
     }
 }

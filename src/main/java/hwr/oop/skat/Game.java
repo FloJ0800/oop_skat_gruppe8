@@ -44,20 +44,118 @@ public class Game {
 
     }
 
-    public void layCard(Card pCard)
+    public void lay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Card(Card pCard)
     {
         layedCards.add(pCard);
         if(layedCards.size() == 3)
         {
             Tricks tricks = new Tricks(layedCards);
         }
-        DataManager dataManager = new DataManager();
+
     }
 
     public void loadData()
     {
 
 
+    }
+
+    public List<Card> getLayedCards() {
+        return layedCards;
     }
 
     public List<Player> getPlayerList() {
