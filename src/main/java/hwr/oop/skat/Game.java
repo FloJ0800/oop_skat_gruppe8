@@ -22,12 +22,12 @@ public class Game {
         dataStream.forEach(System.out::println);
     }
 
+    /*
     public void fillPlayerList(){
         dataStream.filter(c -> c.equals("Spieler%"))
             .forEach(System.out::println);
-        ;
-
     }
+    */
 
     public void giveCards() //Ersetzen durch einen Stream
     {
@@ -68,7 +68,9 @@ public class Game {
         return skat;
     }
 
+    /*
     public CardDeck getDeck() {
         return deck;
     }
+    */
 }
