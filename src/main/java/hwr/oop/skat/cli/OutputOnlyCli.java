@@ -12,11 +12,10 @@ public class OutputOnlyCli {
         this.out = new PrintStream(out);
     }
 
-    public void handle(List<String> arguments) {
+    public void handle(List<Integer> arguments) {
         final var result = arguments.stream()
-                .map(Integer::valueOf)
-                .reduce(Integer::sum)
-                .orElseThrow();
+                .reduce(Integer::sum);
+
         out.println("result: " + result);
     }
 }

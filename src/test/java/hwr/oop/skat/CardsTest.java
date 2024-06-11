@@ -28,8 +28,20 @@ class CardsTest {
     @Test
     void testPrintCard() {
         Card card = new Card(Symbol.ZEHN, Color.KARO);
-        String compareString = Color.KARO.toString() + " " + Symbol.ZEHN.toString();
-        assertThat(card.printCard()).isEqualTo(compareString);
+        String compareString = Color.KARO + " " + Symbol.ZEHN;
+
+        assertSoftly(softly -> {
+            softly.assertThat(card.printCard()).isEqualTo(compareString);
+        });
+    }
+
+    @Test
+    void toStringTest() {
+        Card card = new Card(Symbol.ZEHN, Color.KARO);
+
+        assertSoftly(softly -> {
+            softly.assertThat(card.toString()).isNotBlank();
+        });
     }
 
     @Test
