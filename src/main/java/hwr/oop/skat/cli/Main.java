@@ -1,12 +1,9 @@
 package hwr.oop.skat.cli;
 
-import hwr.oop.skat.Card;
-import hwr.oop.skat.CardDeck;
-import hwr.oop.skat.Game;
-import hwr.oop.skat.Player;
+import hwr.oop.skat.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.PrintStream;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -15,8 +12,7 @@ public class Main {
         System.out.println("gnampf!");
         final var cli = new OutputOnlyCli(System.out);
         Game game = new Game();
-        game.giveCards();
-
+        game.loadData();
     }
 
 }
