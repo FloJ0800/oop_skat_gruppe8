@@ -2,7 +2,12 @@ package hwr.oop.skat;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCharSequence;
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -11,16 +16,42 @@ class CardDeckTest {
     void CardDeck_IsNotEmpty() {
         CardDeck cardDeck = new CardDeck();
         cardDeck.fillList();
-        assertThat(cardDeck.isEmpty()).isFalse();
+        final List<Card> testDeck = new ArrayList<>();
+
+        assertSoftly(softly -> {
+            softly.assertThat(cardDeck.isEmpty()).isFalse();
+            softly.assertThat(testDeck).isNotEqualTo(cardDeck.getDeck());
+            softly.assertThat(cardDeck.getDeck()).isNotEmpty();
+        });
+    }
+
+    @Test
+    void CardDeck_IsEmpty() {
+        CardDeck cardDeck = new CardDeck();
+        final List<Card> testDeck = new ArrayList<>();
+
+        assertSoftly(softly -> {
+            softly.assertThat(cardDeck.isEmpty()).isTrue();
+            softly.assertThat(testDeck).isEqualTo(cardDeck.getDeck());
+            softly.assertThat(cardDeck.getDeck()).isEmpty();
+        });
     }
 
     @Test
     void cardDeckShuffleTest() {
         CardDeck cardDeck = new CardDeck();
         cardDeck.fillList();
+        final List<Card> testDeck = cardDeck.getDeck();
         cardDeck.shuffle();
+        final List<Card> shuffledDeck = cardDeck.getShuffledDeck();
         int deckSize = cardDeck.getShuffledDeck().size();
-        assertThat(deckSize).isEqualTo(32);
+
+        assertSoftly(softly -> {
+            softly.assertThat(deckSize).isEqualTo(32);
+            softly.assertThat(shuffledDeck).doesNotContainSequence(testDeck);
+
+        });
+
 
     }
 
@@ -41,14 +72,16 @@ class CardDeckTest {
         cardDeck.shuffle();
         Card testFirstCard = cardDeck.getShuffledDeck().getFirst();
         Card firstCard = cardDeck.drawFirstCard();
-        assertThat(cardDeck.getShuffledDeck()).hasSize(31);
-        assertThat(firstCard).isEqualTo(testFirstCard);
+
+        assertSoftly(softly -> {
+            softly.assertThat(cardDeck.getShuffledDeck()).hasSize(31);
+            softly.assertThat(firstCard).isEqualTo(testFirstCard);
+        });
     }
 
     @Test
     void drawFirstCardCatchExceptionTest()
     {
-
         CardDeck cardDeck = new CardDeck();
         cardDeck.fillList();
         Card testFirstCard = cardDeck.drawFirstCard();

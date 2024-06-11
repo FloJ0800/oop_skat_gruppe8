@@ -26,6 +26,10 @@ public class Player {
         return hand.stream();
     }
 
+    public void setPoints(int newPoints){
+        points = newPoints;
+    }
+
     public void drawCard(Card pAddCard){
         handCards.add(pAddCard);
     }
