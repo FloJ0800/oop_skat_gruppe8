@@ -10,7 +10,7 @@ public class Game {
     private List<Card> skat = new ArrayList<>();
     private CardDeck deck = new CardDeck();
     DataManager dataManager;
-    Stream<Card> layedCards;
+  List<Card> layedCards = new ArrayList<>();
     Stream<String> dataStream;
     int currentPlayer; //?
 
@@ -46,8 +46,8 @@ public class Game {
 
     public void layCard(Card pCard)
     {
-        layedCards = Stream.concat(layedCards, Stream.of(pCard));
-        if(layedCards.count() == 3)
+        layedCards.add(pCard);
+        if(layedCards.size() == 3)
         {
             Tricks tricks = new Tricks(layedCards);
         }

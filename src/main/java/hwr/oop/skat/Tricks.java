@@ -7,8 +7,8 @@ public class Tricks {
     List<Card> compareList;
 
 
-    public Tricks(Stream<Card> pCards) {
-        compareList = pCards.toList();
+    public Tricks(List<Card> pCards) {
+        compareList = pCards;
 
     }
     public Card compareCards() {
@@ -17,4 +17,7 @@ public class Tricks {
         return comp.getHighestTrick(firstCheck, compareList.get(2));
     }
 
+    public List<Card> getCompareList() {
+        return compareList;
+    }
 }
