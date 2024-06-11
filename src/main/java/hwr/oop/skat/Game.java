@@ -70,10 +70,4 @@ public class Game {
     public List<Card> getSkat() {
         return skat;
     }
-
-    /*
-    public CardDeck getDeck() {
-        return deck;
-    }
-    */
 }

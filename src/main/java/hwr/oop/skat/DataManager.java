@@ -25,7 +25,7 @@ public class DataManager {
             fileWriter.close();
 
         }
-        catch (Exception e){ //evtl änder in IOException oder so was
+        catch (IOException e){
             e.printStackTrace();
         }
     }
@@ -48,6 +48,5 @@ public class DataManager {
         }
 
         return stringStream;
-
     }
 }
