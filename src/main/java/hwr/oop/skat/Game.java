@@ -44,101 +44,7 @@ public class Game {
 
     }
 
-    public void lay
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    Card(Card pCard)
+    public void layCard(Card pCard)
     {
         layedCards.add(pCard);
         if(layedCards.size() == 3)
@@ -150,7 +56,6 @@ public class Game {
 
     public void loadData()
     {
-
 
     }
 
