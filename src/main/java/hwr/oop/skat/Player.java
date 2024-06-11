@@ -16,15 +16,6 @@ public class Player {
         alone = pAlone;
     }
 
-    public Stream<String> getHand()
-    {
-        List<String> hand = new ArrayList<>();
-        for(Card card : handCards)
-        {
-            hand.add(card.printCard());
-        }
-        return hand.stream();
-    }
 
     public void setPoints(int newPoints){
         points = newPoints;

@@ -10,7 +10,7 @@ public class Game {
     private List<Card> skat = new ArrayList<>();
     private CardDeck deck = new CardDeck();
     DataManager dataManager;
-  List<Card> layedCards = new ArrayList<>();
+    List<Card> layedCards = new ArrayList<>();
     Stream<String> dataStream;
     int currentPlayer; //?
 
