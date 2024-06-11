@@ -1,36 +1,37 @@
 package hwr.oop.skat;
 
 public class Comparator {
-    
-
-    public int getHighestTrick(Card CardA, Card CardB){
+    public Card getHighestTrick(Card CardA, Card CardB){
 
         if (CardA.isTrump() && CardB.isTrump()){
-
-            return Integer.compare(CardA.getBattleValue(), CardB.getBattleValue());
-
+            if(Integer.compare(CardA.getBattleValue(), CardB.getBattleValue()) > 0) {
+                return CardA;
+            }
+            else {
+                return CardB;
+            }
         } else if (!CardA.isTrump() && CardB.isTrump()){
-
-            return -1;
+            return CardB;
 
         } else if (CardA.isTrump() && !CardB.isTrump()){
-
-            return 1;
+            return CardA;
 
         } else {
 
             if (CardA.getColor() != CardB.getColor()){
 
-                return 1;
+                return CardA;
 
             } else {
-
-                return Integer.compare(CardA.getBattleValue(), CardB.getBattleValue());
-
+                if(Integer.compare(CardA.getBattleValue(), CardB.getBattleValue()) > 0) {
+                    return CardA;
+                }
+                else {
+                    return CardB;
+                }
             }
 
         }
 
     }
-
 }

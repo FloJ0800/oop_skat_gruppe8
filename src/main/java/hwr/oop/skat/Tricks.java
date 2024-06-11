@@ -12,7 +12,7 @@ public class Tricks {
 
     }
     public Card compareCards() {
-        Comperator comp = new Comperator();
+        Comparator comp = new Comparator();
         Card firstCheck = comp.getHighestTrick(compareList.getFirst(), compareList.get(1));
         return comp.getHighestTrick(firstCheck, compareList.get(2));
     }

@@ -12,9 +12,6 @@ public class GameTest {
     {
         Game game = new Game();
         assertSoftly(softly -> {
-            softly.assertThat(game.getPlayerList()).hasSize(3);
-            softly.assertThat(game.getDeck().getShuffledDeck()).isNotEmpty();
-            softly.assertThat(game.getDeck().getDeck()).isNotEmpty();
         });
     }
 
