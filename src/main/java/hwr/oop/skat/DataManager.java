@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.util.stream.Stream;
 
 public class DataManager {
-    String path = "/Users/dominic/Documents/DevSkat/Save.txt";
+    String path = "./Save.txt";
     FileOutputStream fileOutputStream;
 
     public DataManager(){
