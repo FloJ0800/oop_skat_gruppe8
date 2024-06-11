@@ -45,9 +45,15 @@ public class GameTest {
     {
         Game game = new Game();
         Card card = new Card(Symbol.ZEHN,Color.KARO);
+        Card card2 = new Card(Symbol.NEUN,Color.KARO);
+        Card card3 = new Card(Symbol.ACHT,Color.PIK);
         int layedCardCount = game.layedCards.size();
         game.layCard(card);
+
         assertThat(game.getLayedCards().size()).isEqualTo(layedCardCount + 1);
         assertThat(game.getLayedCards().getLast()).isEqualTo(card);
+        game.layCard(card2);
+        game.layCard(card3);
+        assertThat(game.getWinCard()).isEqualTo(card);
     }
 }

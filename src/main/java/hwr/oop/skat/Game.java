@@ -13,6 +13,7 @@ public class Game {
     List<Card> layedCards = new ArrayList<>();
     Stream<String> dataStream;
     int currentPlayer; //?
+    Card winCard;
 
     public Game()
     {
@@ -50,10 +51,14 @@ public class Game {
         if(layedCards.size() == 3)
         {
             Tricks tricks = new Tricks(layedCards);
+            winCard = tricks.compareCards();
         }
 
     }
 
+    public Card getWinCard() {
+        return winCard;
+    }
 
     public List<Card> getLayedCards() {
         return layedCards;
