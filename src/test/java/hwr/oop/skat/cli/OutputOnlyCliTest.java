@@ -18,13 +18,22 @@ import static org.assertj.core.api.SoftAssertions.assertSoftly;
 public class OutputOnlyCliTest {
 
     @Test
-    void outputOnlyCliTest() {
+    void handleFullTest() {
         OutputStream outputStream = new ByteArrayOutputStream();
         final var cli = new OutputOnlyCli(outputStream);
-        List<Integer> list = List.of(1, 2);
+        List<Integer> list = List.of(3, 4);
         cli.handle(list);
         String output = outputStream.toString();
-        assertThat(output).contains("3");
+        assertThat(output).contains("result: 7");
+    }
+    @Test
+    void handleEmptyTest() {
+        OutputStream outputStream = new ByteArrayOutputStream();
+        final var cli = new OutputOnlyCli(outputStream);
+        List<Integer> list = List.of();
+        cli.handle(list);
+        String output = outputStream.toString();
+        assertThat(output).contains("result: ");
     }
 
 }

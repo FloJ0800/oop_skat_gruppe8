@@ -14,7 +14,7 @@ public class OutputOnlyCli {
 
     public void handle(List<Integer> arguments) {
         final var result = arguments.stream()
-                .reduce(Integer::sum);
+                .reduce(0, (a, b) -> a+b);
 
         out.println("result: " + result);
     }
