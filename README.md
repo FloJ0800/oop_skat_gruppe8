@@ -1,9 +1,7 @@
-# HWR OOP Lecture Project Template
-
-[TODO]: # (Change README.md Headline to better fit to your project!)
+# HWR OOP Group Project Skat Game
 
 This repository contains a student project created for an ongoing lecture on object-oriented
-programming with Java/Kotlin at HWR Berlin (summer term 2024).
+programming with Java at HWR Berlin (summer term 2024).
 
 > :warning: This code is for educational purposes only. Do not rely on it!
 
@@ -41,6 +39,9 @@ just build
 
 ## Abstract
 
+Our project aimed for a playable Skat game for three players. The foundation of the game
+(Cards, Players, etc) are implemented including the Game Logic as a combination of Comparator and Game.
+For persistance we use a FileWriting and FileReading system in the DataManager class.
 [TODO]: # (Write a short description of your project.)
 
 [TODO]: # (State most important features.)
