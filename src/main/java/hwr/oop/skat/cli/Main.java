@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         final var cli = new OutputOnlyCli(System.out);
         List<Integer> list = List.of(1, 2);
-        cli.handle(list);
+        String result = cli.handle(list);
         Game game = new Game();
     }
 }
