@@ -20,7 +20,7 @@ public class Game {
         dataManager = new DataManager();
         dataManager.save("Spieler1;Spieler2;Spieler3;Spieler1=solo;");
         dataStream = dataManager.load();
-        dataStream.forEach(System.out::println);
+        //dataStream.forEach(System.out::println);
     }
 
     public Game(List<Player> pPlayerList) {

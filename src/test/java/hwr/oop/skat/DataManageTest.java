@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThatCharSequence;
 public class DataManageTest {
 
     @Test
-    public void createFile()
+    public void createFileTest()
     {
         String path = "./Save.txt";
         File file = new File(path);
@@ -22,6 +22,13 @@ public class DataManageTest {
 
         assertThat(file.exists()).isTrue();
 
+    }
+
+    @Test
+    public void saveTest(){
+        DataManager dataManager = new DataManager();
+        dataManager.save("123");
+        assertThat(dataManager.load().toList().getFirst()).isEqualTo("123");
     }
 
 }

@@ -16,11 +16,10 @@ public class GameTest {
     public void testGameConstructor()
     {
         Game game = new Game();
-        game.dataManager = new DataManager();
-        game.dataManager.save("Spieler1;Spieler2;Spieler3;Spieler1=solo;");
-        game.dataStream = game.dataManager.load();
+        List<String> list = List.of("Spieler1", "Spieler2", "Spieler3", "Spieler1=solo");
         assertSoftly(softly -> {
-            softly.assertThat(game.dataStream).isNotEmpty();
+            softly.assertThat(game.dataManager.load().toList()).isEqualTo(list);
+            softly.assertThat(game.dataManager.load().toList()).isNotEmpty();
         });
     }
 

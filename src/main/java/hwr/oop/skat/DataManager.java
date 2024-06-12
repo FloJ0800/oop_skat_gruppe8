@@ -23,10 +23,9 @@ public class DataManager {
             FileWriter fileWriter = new FileWriter(path);
             fileWriter.write(pSaveData);
             fileWriter.close();
-
         }
         catch (IOException e){
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -39,8 +38,6 @@ public class DataManager {
             FileReader fileReader = new FileReader(file);
             String temStr = Files.readString(Path.of(path), Charset.defaultCharset());
             stringStream = Stream.of(temStr.split(";"));
-            fileReader.close();
-
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
