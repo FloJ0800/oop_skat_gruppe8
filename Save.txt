@@ -1,1 +1,1 @@
-test
+Spieler1;Spieler2;Spieler3;Spieler1=solo;
