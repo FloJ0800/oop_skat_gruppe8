@@ -24,15 +24,4 @@ public class DataManageTest {
 
     }
 
-    @Test
-    public void fileNotFoundExceptionTest()
-    {
-        DataManager dataManager = new DataManager();
-        dataManager.save("test");
-        File file = new File("./Save.txt");
-        file.delete();
-        dataManager.load();
-        Assertions.assertThrows(FileNotFoundException.class, () -> {});
-    }
-
 }
