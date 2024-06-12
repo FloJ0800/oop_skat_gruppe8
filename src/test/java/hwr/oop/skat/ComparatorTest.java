@@ -18,21 +18,25 @@ class ComparatorTest {
 
 
         Card trumpAndTrump = testComparator.getHighestTrick(trumpCardOne, trumpCardTwo);
+        Card trumpAndTrumpEqual = testComparator.getHighestTrick(trumpCardOne, trumpCardOne);
         Card trumpAndTrumpReversed = testComparator.getHighestTrick(trumpCardTwo, trumpCardOne);
         Card noTrumpAndNoTrump = testComparator.getHighestTrick(noTrumpCardOne, noTrumpCardTwo);
         Card noTrumpAndNoTrumpOtherWay = testComparator.getHighestTrick(noTrumpCardTwo, noTrumpCardOne);
         Card noTrumpAndTrump = testComparator.getHighestTrick(noTrumpCardOne, trumpCardOne);
         Card trumpAndNoTrump = testComparator.getHighestTrick(trumpCardOne, noTrumpCardTwo);
         Card differentColor = testComparator.getHighestTrick(noTrumpCardTwo, noTrumpCardTwo_HERZ);
+        Card cardAisCardB = testComparator.getHighestTrick(trumpCardOne, trumpCardOne);
 
         assertSoftly(softly -> {
             softly.assertThat(trumpAndTrump).isEqualTo(trumpCardTwo);
+            softly.assertThat(trumpAndTrumpEqual).isEqualTo(trumpCardOne);
             softly.assertThat(trumpAndTrumpReversed).isEqualTo(trumpCardTwo);
             softly.assertThat(noTrumpAndNoTrump).isEqualTo(noTrumpCardTwo);
             softly.assertThat(noTrumpAndTrump).isEqualTo(trumpCardOne);
             softly.assertThat(trumpAndNoTrump).isEqualTo(trumpCardOne);
             softly.assertThat(differentColor).isEqualTo(noTrumpCardTwo);
             softly.assertThat(noTrumpAndNoTrumpOtherWay).isEqualTo(noTrumpCardTwo);
+            softly.assertThat(cardAisCardB).isEqualTo(trumpCardOne);
 
         });
     }
