@@ -23,6 +23,10 @@ public class Game {
         dataStream.forEach(System.out::println);
     }
 
+    public Game(List<Player> pPlayerList) {
+        this.playerList = pPlayerList;
+    }
+
     /*
     public void fillPlayerList(){
         dataStream.filter(c -> c.equals("Spieler%"))

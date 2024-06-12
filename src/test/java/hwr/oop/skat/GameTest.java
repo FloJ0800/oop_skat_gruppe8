@@ -1,7 +1,9 @@
 package hwr.oop.skat;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,12 +24,17 @@ public class GameTest {
     @Test
     public void giveCardsTest()
     {
-        Game game = new Game();
+        List<Player> testPlayerList = new ArrayList<>();
+        testPlayerList.add(new Player("Spieler1", true));
+        testPlayerList.add(new Player("Spieler2", false));
+        testPlayerList.add(new Player("Spieler3", false));
+        Game game = new Game(testPlayerList);
         game.giveCards();
         CardDeck cardDeck = new CardDeck();
         cardDeck.fillList();
         final List<Card> testDeck = cardDeck.getDeck();
         final List<Player> playerList = game.getPlayerList();
+        Assertions.assertThat(game.getPlayerList()).isEqualTo(testPlayerList);
         for(Player p : game.getPlayerList())
         {
             assertSoftly(softly ->{
@@ -36,7 +43,7 @@ public class GameTest {
                 softly.assertThat(p.getHandCards()).doesNotContainSequence(testDeck);
             });
         }
-            assertThat(game.getSkat().size()).isEqualTo(2);
+        assertThat(game.getSkat().size()).isEqualTo(2);
 
     }
 
