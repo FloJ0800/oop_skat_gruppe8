@@ -28,11 +28,16 @@ public class DataManageTest {
     public void fileNotFoundExceptionTest()
     {
         DataManager dataManager = new DataManager();
-        dataManager.save("test");
-        File file = new File("./Save.txt");
-        file.delete();
-        dataManager.load();
-        Assertions.assertThrows(FileNotFoundException.class, () -> {});
+        boolean thrown = false;
+        try {
+            dataManager.save("test");
+            File file = new File("./Save.txt");
+            file.delete();
+            dataManager.load();
+        } catch (FileNotFoundException e) {
+            thrown = true;
+        }
+        assertThat(thrown).isTrue();
     }
 
 }
