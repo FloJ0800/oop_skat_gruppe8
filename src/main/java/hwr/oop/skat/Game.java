@@ -27,18 +27,8 @@ public class Game {
         this.playerList = pPlayerList;
     }
 
-    /*
-    public void fillPlayerList(){
-        dataStream.filter(c -> c.equals("Spieler%"))
-            .forEach(System.out::println);
-    }
-    */
-
     public void giveCards() //Ersetzen durch einen Stream
     {
-        deck.fillList();
-        deck.shuffle();
-
         for(int i = 0; i <= 9; i++){
             for(Player p: playerList){
                 p.drawCard(deck.drawFirstCard());
